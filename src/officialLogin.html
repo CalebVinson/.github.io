@@ -24,6 +24,12 @@ button {
   width: 100%;
 }
 
+.backbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
 button:hover {
   opacity: 0.8;
 }
@@ -45,7 +51,7 @@ span {
 
 <h2>RIT Walking Map Official Login</h2>
 
-<form action="/action_page.php" method="post">
+<form>
   
 
   <div class="container">
@@ -64,11 +70,12 @@ span {
       <input type="checkbox" checked="checked" name="remember"> Remember me
       
     </label>
-    <span>If you are not a public official <a href="/login.html">Click here</a></span>
+    <span>If you are not a public official <a href="login.html">Click here</a></span>
+    
     
 
   </div>
 </form>
-
+<button tpye="button" class = "backbtn"><a herf="index.html">Back</a></button>
 </body>
 </html>
