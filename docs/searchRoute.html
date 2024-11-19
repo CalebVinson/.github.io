@@ -62,16 +62,16 @@
             </form>
             <p>Choose End Location</p>
             <form>
-                <input type="radio" id="GOS" name="endLoc" value="GOS">
-                <label for="GOS">Gosnell</label><br>
-                <input type="radio" id="GOL" name="endLoc" value="GOL">
-                <label for="GOL">Golisano</label><br>
-                <input type="radio" id="GLE" name="endLoc" value="GLE">
-                <label for="GLE">Gleason</label><br>
-                <input type="radio" id="SHED" name="endLoc" value="SHED">
-                <label for="SHED">SHED</label><br>
-                <input type="radio" id="WAL" name="endLoc" value="WAL">
-                <label for="WAL">Wallace</label><br>
+                <input type="radio" id="GOSe" name="endLoc" value="GOS">
+                <label for="GOSe">Gosnell</label><br>
+                <input type="radio" id="GOLe" name="endLoc" value="GOL">
+                <label for="GOLe">Golisano</label><br>
+                <input type="radio" id="GLEe" name="endLoc" value="GLE">
+                <label for="GLEe">Gleason</label><br>
+                <input type="radio" id="SHEDe" name="endLoc" value="SHED">
+                <label for="SHEDe">SHED</label><br>
+                <input type="radio" id="WALe" name="endLoc" value="WAL">
+                <label for="WALe">Wallace</label><br>
             </form>
             <button class="backbtn" onclick="checkDistance()">Submit</button>
             <p class="dist" id="distance">Total Distance: </p>
@@ -115,6 +115,19 @@
             } else if(start == "WAL" || end == "WAL") {
                 dist.innerText = "Total Distance: 0.18 miles";
                 time.innerText = "Total Time: 3 mins";
+            }
+        } else if(start == "GLE" || end == "GLE") {
+            if(start == "SHED" || end == "SHED") {
+                dist.innerText = "Total Distance: 0.11 miles";
+                time.innerText = "Total Time: 2 mins";
+            } else if(start == "WAL" || end == "WAL") {
+                dist.innerText = "Total Distance: 0.07 miles";
+                time.innerText = "Total Time: 1 mins";
+            }
+        } else if(start == "SHED" || end == "SHED") {
+            if(start == "WAL" || end == "WAL") {
+                dist.innerText = "Total Distance: 0.09 miles";
+                time.innerText = "Total Time: 2 mins";
             }
         }
     }
