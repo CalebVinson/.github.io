@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/global.css" type="text/css" />
+        <title>RIT Walking Map User Preferences</title>
+        <style>
+            button {
+            background-color: #f88424;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            }
+
+            .backbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #ff6600;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>RIT Walking Map User Preferences<br></h1>
+        
+        <p>Choose Units for Distance:</p>
+        <form>
+            <input type="radio" id="feet" name="units" value="feet">
+            <label for="feet">Feet</label><br>
+            <input type="radio" id="yards" name="units" value="yards">
+            <label for="yards">Yards</label><br>
+            <input type="radio" id="meters" name="units" value="meters">
+            <label for="meters">Meters</label><br>
+        </form>
+        <a href="homePage.html" ><button class=backbtn>Back</button></a>
+    </body>
+</html>
