@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/global.css" type="text/css" />
+        <title>RIT Walking Map User Preferences</title>
+        <style>
+            button {
+            background-color: #f88424;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            }
+
+            .backbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #ff6600;
+            }
+
+            body {
+                background-image: url("RITMap.png");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: contain;
+                background-position: center;
+                text-align: center;
+            }
+            
+            form {
+                background-color: #f88424;
+                margin: 0 auto;
+                width: 100px;
+            }
+
+            p {
+                background-color: #f88424;
+                width: 175px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>RIT Walking Map Search Routes<br></h1>
+        
+        <center>
+            <p>Choose Start Location:</p>
+            <form>
+                <input type="radio" id="GOS" name="startLoc" value="GOS">
+                <label for="GOS">Gosnell</label><br>
+                <input type="radio" id="GOL" name="startLoc" value="GOL">
+                <label for="GOL">Golisano</label><br>
+                <input type="radio" id="GLE" name="startLoc" value="GLE">
+                <label for="GLE">Gleason</label><br>
+                <input type="radio" id="SHED" name="startLoc" value="SHED">
+                <label for="SHED">SHED</label><br>
+                <input type="radio" id="WAL" name="startLoc" value="WAL">
+                <label for="WAL">Wallace</label><br>
+            </form>
+            <p>Choose End Location</p>
+            <form>
+                <input type="radio" id="GOS" name="endLoc" value="GOS">
+                <label for="GOS">Gosnell</label><br>
+                <input type="radio" id="GOL" name="endLoc" value="GOL">
+                <label for="GOL">Golisano</label><br>
+                <input type="radio" id="GLE" name="endLoc" value="GLE">
+                <label for="GLE">Gleason</label><br>
+                <input type="radio" id="SHED" name="endLoc" value="SHED">
+                <label for="SHED">SHED</label><br>
+                <input type="radio" id="WAL" name="endLoc" value="WAL">
+                <label for="WAL">Wallace</label><br>
+            </form>
+            <!-- <button class="backbtn" onclick="checkDistance()">Submit</button>
+            <p>Total Distance: </p>
+            <p class="dist" id="distance"></p> -->
+        </center>
+
+        <a href="homePage.html" ><button class=backbtn>Back</button></a>
+    </body>
+</html>
