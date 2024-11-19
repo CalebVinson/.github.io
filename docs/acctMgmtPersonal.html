@@ -1,0 +1,112 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/global.css" type="text/css" />
+<title>Account Management - Personal Information</title>
+<style>
+form {border: 3px solid #ffffff;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #f88424;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.backbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.container {
+  background-color:#ffffff;
+  padding: 16px;
+}
+
+span {
+  float: right;
+  padding-top: 16px;
+}
+
+.pswMatch {
+  color:#f44336;
+  font-size: small;
+}
+
+</style>
+</head>
+<body>
+
+<span> <a href= "login.html"><button class="backbtn" >Logout</button></a></span>
+<h2>Account Management - Personal Information</h2>
+
+
+<form>
+
+  <div class="container">
+    <label for="psw"><b>New Password</b></label>
+    <input type="password" placeholder="Enter New Password" id="psw" onchange="checkMatch()" required>
+
+    <label for="pswConfirm"><b>Confirm Password</b></label>
+    <input type="password" placeholder="Re-Enter Password" id="pswConfirm" onchange="checkMatch()" required>
+        
+    <p1 class="pswMatch" id="passMatch"></p1>
+    <button type="button" id="confirmPSW" onclick="passConfirm()">Confirm Password</button>
+    <p1 id="passChanged"></p1> 
+
+
+  </div>
+</form>
+</body>
+</html>
+
+<script>
+  function passConfirm(){
+    var pswChange = document.getElementById("passChanged");
+    var psw = document.getElementById("psw").value;
+    var pswConfirm = document.getElementById("pswConfirm").value;
+    if (psw === pswConfirm && psw != "" && pswConfirm != "") {
+      pswChange.innerText = "Password Changed";
+    }
+  }
+
+  function checkMatch(){
+    var psw = document.getElementById("psw").value;
+    var pswConfirm = document.getElementById("pswConfirm").value;
+    var pMatch = document.getElementById("passMatch");
+    if (psw === pswConfirm) {
+      changeTextGood();
+    } else {
+      changeTextBad();
+    }
+  }
+
+  function changeTextGood(){
+    var pMatch = document.getElementById("passMatch");
+    pMatch.innerText = "";
+  }
+
+  function changeTextBad(){
+    var pMatch = document.getElementById("passMatch");
+    pMatch.innerText = "Passwords Must Match";
+  }
+</script>
