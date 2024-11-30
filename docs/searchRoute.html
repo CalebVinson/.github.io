@@ -21,9 +21,16 @@
             padding: 10px 18px;
             background-color: #ff6600;
             }
+            
+            .viewbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #ff6600;
+            }
 
             body {
                 background-image: url("RITMap.png");
+                z-index: 1;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: contain;
@@ -48,10 +55,10 @@
         <h1>RIT Walking Map Search Routes<br></h1>
         
         <center>
-            <p>Choose Start Location:</p>
-            <form>
+            <p id = "text1">Choose Start Location:</p>
+            <form id="form1">
                 <input type="radio" id="GOS" name="startLoc" value="GOS">
-                <label for="GOS">Gosnell</label><br>
+                <label for="GOS" id="Gosnells">Gosnell</label><br>
                 <input type="radio" id="GOL" name="startLoc" value="GOL">
                 <label for="GOL">Golisano</label><br>
                 <input type="radio" id="GLE" name="startLoc" value="GLE">
@@ -61,10 +68,10 @@
                 <input type="radio" id="WAL" name="startLoc" value="WAL">
                 <label for="WAL">Wallace</label><br>
             </form>
-            <p>Choose End Location</p>
-            <form>
+            <p id = "text2">Choose End Location</p>
+            <form id="form2">
                 <input type="radio" id="GOSe" name="endLoc" value="GOS">
-                <label for="GOSe">Gosnell</label><br>
+                <label for="GOSe" id="Gosnell">Gosnell</label><br>
                 <input type="radio" id="GOLe" name="endLoc" value="GOL">
                 <label for="GOLe">Golisano</label><br>
                 <input type="radio" id="GLEe" name="endLoc" value="GLE">
@@ -74,7 +81,9 @@
                 <input type="radio" id="WALe" name="endLoc" value="WAL">
                 <label for="WALe">Wallace</label><br>
             </form>
-            <button class="backbtn" onclick="checkDistance()">Submit</button>
+            <button class="backbtn" onclick="checkDistance()" id="submit">Submit</button>
+            <button class="viewbtn" onclick="hide()" id="view">View</button>
+            <div class="golgos"><div>
             <p class="dist" id="distance">Total Distance: </p>
             <p class="dist" id="time">Total Time: </p>
         </center>
@@ -83,6 +92,24 @@
     </body>
 </html>
 <script>
+    var hidden = true;
+    function hide() {
+        if(hidden) {
+            document.getElementById("form1").style.visibility="hidden";
+            document.getElementById("form2").style.visibility="hidden";
+            document.getElementById("text1").style.visibility="hidden";
+            document.getElementById("text2").style.visibility="hidden";
+            document.getElementById("submit").style.visibility="hidden";
+            hidden = false;
+        } else {
+            document.getElementById("form1").style.visibility="visible";
+            document.getElementById("form2").style.visibility="visible";
+            document.getElementById("text1").style.visibility="visible";
+            document.getElementById("text2").style.visibility="visible";
+            document.getElementById("submit").style.visibility="visible";            
+            hidden = true;
+        }
+    }
     function checkDistance() {
         var start = document.querySelector('input[name="startLoc"]:checked').value;
         var end = document.querySelector('input[name="endLoc"]:checked').value;
@@ -96,39 +123,49 @@
             if(start == "GOL" || end == "GOL") {
                 dist.innerText = "Total Distance: 0.10 miles";
                 time.innerText = "Total Time: 2 mins";
+                document.body.style.backgroundImage="url(RITMapGolGos.png)";
             } else if(start == "GLE" || end == "GLE") {
                 dist.innerText = "Total Distance: 0.02 miles";
                 time.innerText = "Total Time: 0 mins";
+                document.body.style.backgroundImage="url(RITMapGosGle.png)";
             } else if(start == "SHED" || end == "SHED") {
                 dist.innerText = "Total Distance: 0.11 miles";
                 time.innerText = "Total Time: 2 mins";
+                document.body.style.backgroundImage="url(RITMapGosShe.png)";
             } else if(start == "WAL" || end == "WAL") {
                 dist.innerText = "Total Distance: 0.07 miles";
                 time.innerText = "Total Time: 1 mins";
+                document.body.style.backgroundImage="url(RITMapGolWal.png)";
             }
         } else if(start == "GOL" || end == "GOL") {
             if(start == "GLE" || end == "GLE") {
                 dist.innerText = "Total Distance: 0.08 miles";
                 time.innerText = "Total Time: 2 mins";
+                document.body.style.backgroundImage="url(RITMapGolGle.png)";
             } else if(start == "SHED" || end == "SHED") {
                 dist.innerText = "Total Distance: 0.22 miles";
                 time.innerText = "Total Time: 4 mins";
+                document.body.style.backgroundImage="url(RITMapGolShe.png)";
             } else if(start == "WAL" || end == "WAL") {
                 dist.innerText = "Total Distance: 0.18 miles";
                 time.innerText = "Total Time: 3 mins";
+                document.body.style.backgroundImage="url(RITMapGolWal.png)";
             }
         } else if(start == "GLE" || end == "GLE") {
             if(start == "SHED" || end == "SHED") {
                 dist.innerText = "Total Distance: 0.11 miles";
                 time.innerText = "Total Time: 2 mins";
+                document.body.style.backgroundImage="url(RITMapGleShe.png)";
             } else if(start == "WAL" || end == "WAL") {
                 dist.innerText = "Total Distance: 0.07 miles";
                 time.innerText = "Total Time: 1 mins";
+                document.body.style.backgroundImage="url(RITMapGleWal.png)";
             }
         } else if(start == "SHED" || end == "SHED") {
             if(start == "WAL" || end == "WAL") {
                 dist.innerText = "Total Distance: 0.09 miles";
                 time.innerText = "Total Time: 2 mins";
+                document.body.style.backgroundImage="url(RITMapSheWal.png)";
             }
         }
     }
